@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>11111</title>
+    <title>添加微信</title>
 </head>
 <body>
-    3333
+    <h1>点击下方按钮添加微信</h1>
+    <button onclick="openWeChat()">添加微信</button>
+    <script>
+        function openWeChat() {
+            const ua = navigator.userAgent.toLowerCase();
+            const isAndroid = /android/i.test(ua);
+            const isIOS = /iphone|ipad|ipod/i.test(ua);
+
+            if (isAndroid) {
+                window.location.href = 'weixin://dl/chat?YOUR_WECHAT_ID';
+            } else if (isIOS) {
+                window.location.href = 'weixin://dl/chat?YOUR_WECHAT_ID';
+                setTimeout(() => {
+                    window.location.href = 'weixin://';
+                }, 500);
+            }
+        }
+    </script>
 </body>
 </html>
