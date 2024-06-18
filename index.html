@@ -6,22 +6,14 @@
 </head>
 <body>
     <h1>点击下方按钮添加微信</h1>
-    <button onclick="openWeChat()">添加微信</button>
+    <button onclick="openWeChat()">——添加微信——</button>
     <script>
         function openWeChat() {
             const ua = navigator.userAgent.toLowerCase();
             const isAndroid = /android/i.test(ua);
             const isIOS = /iphone|ipad|ipod/i.test(ua);
-            const weChatShortLink = "https://baidu.com";
-
-            if (isAndroid) {
-                window.location.href = "weixin://dl/browser?url=" + encodeURIComponent(weChatShortLink);
-            } else if (isIOS) {
-                window.location.href = "weixin://dl/browser?url=" + encodeURIComponent(weChatShortLink);
-                setTimeout(() => {
-                    window.location.href = "weixin://";
-                }, 500);
-            }
+            const weChatShortLink = "https://baidu.com/";
+            window.location.href = "weixin://dl/browser?url=" + encodeURIComponent(weChatShortLink);
         }
     </script>
 </body>
