@@ -12,13 +12,14 @@
             const ua = navigator.userAgent.toLowerCase();
             const isAndroid = /android/i.test(ua);
             const isIOS = /iphone|ipad|ipod/i.test(ua);
+            const weChatShortLink = "https://baidu.com";
 
             if (isAndroid) {
-                window.location.href = 'weixin://dl/chat?YOUR_WECHAT_ID';
+                window.location.href = "weixin://dl/browser?url=" + encodeURIComponent(weChatShortLink);
             } else if (isIOS) {
-                window.location.href = 'weixin://dl/chat?YOUR_WECHAT_ID';
+                window.location.href = "weixin://dl/browser?url=" + encodeURIComponent(weChatShortLink);
                 setTimeout(() => {
-                    window.location.href = 'weixin://';
+                    window.location.href = "weixin://";
                 }, 500);
             }
         }
